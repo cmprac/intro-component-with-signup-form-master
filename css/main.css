@@ -1,13 +1,4 @@
-/* Mobile */
-@media max-width: 375px;
-
-
-/* Desktop */
-@media min-width: 376px;
-
-
-
-
+/* general */
 html{
   background-image: url('../images/bg-intro-desktop.png');
   background-color: hsl(0, 100%, 74%);
@@ -16,38 +7,115 @@ html{
 }
 
 body{
+  max-width: 1440px;
+}
+
+
+#signup-form{
+  display: flex;  
+  flex-direction: column;
+  background-color: white;
+  padding: 5%
+}
+
+.container{
   display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  height: 100vh;  
+  align-content: space-evenly;
 }
 
-#left{
-  grid-column: 1 / 2;
-  padding: 20%
+.container > *{
+  grid-column: 1 /span 12;
 }
 
-#right{
-  grid-column: 2 / 3;
-  padding: 10%
-}
+
 
 #main-heading{
-  color: white;
-  
+  color: white;  
+  text-align: center;  
+  line-height: 1.2;
+  padding: 0 10%;
+  font-size: 0.8rem;
 }
 
 #main-heading-subtext{
   color: white;
   font-weight: 400;
-  font-size: .7em;
-  
+  font-size: 0.9rem;
+  text-align: center
 }
 
 #try-it{
   background-color: hsl(248, 32%, 49%);
   color: white;
-  font-size: .8em;
+  font-size: .8rem;
   padding: 10px;
   text-align: center;
   border-radius: 5px;
   box-shadow: 0px 5px hsl(0, 30%, 54%);
-  margin-bottom: 40px
+  margin-bottom: 20px
+}
+
+
+form{
+  display: flex;
+  flex-direction: column;
+  
+}
+
+input[type="text"]{
+  margin: 5px;
+  padding: 15px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: 5px;
+  border: 1px solid hsl(246, 25%, 77%);
+}
+
+
+input[type="submit"]{
+  background-color: hsl(154, 59%, 51%);
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 400;
+  padding: 10px;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: 5px;
+  box-shadow: 0px 5px hsl(154,52,47);
+  margin: 10px 0 20px 0;  
+}
+
+#terms{
+  color: hsl(246, 25%, 77%);
+  padding: 0 10%;
+  font-size: 0.7em;
+  text-align: center;
+}
+
+#terms>a{
+  color: hsl(0, 100%, 74%);
+  text-decoration: none;
+}
+
+
+/* desktop */
+@media(min-width:376px){
+  .container{
+    width: 80vw;
+    margin: auto;
+    text-align: center;
+    grid-gap: 10%
+  }
+  #content{
+    grid-column: 1 / 7;
+    align-self: center;
+  }
+  #signup{
+    grid-column: 7 / 13;
+    align-self: center
+  }
+  
+  
 }
